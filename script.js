@@ -1,65 +1,77 @@
-const menuIcon = document.getElementById("menu-icon")
-const navLinks = document.querySelector(".nav-links")
-const downloadCvBtn = document.getElementById("download-cv-btn")
-const contactBtn = document.getElementById("contact-btn")
-const copyMessage= document.getElementById("copy-message")
-const githubBtn = document.getElementById("github-btn")
-const githubIcon = document.getElementById("github-icon")
-const linkedinIcon = document.getElementById("linkedin-icon")
-const converterGithubRepoBtn = document.getElementById("converter-github-repo-btn")
-const converterLiveDemoBtn = document.getElementById("converter-live-demo-btn")
-const passwordGithubRepoBtn = document.getElementById("password-github-repo-btn")
-const passowrdLiveDemoBtn = document.getElementById("password-live-demo-btn")
+// ===== Config =====
+const EMAIL = "ziadabdellateef7@outlook.com"
+const CV_PATH = "files/Ziad_Mohamed_CV.docx"
+const MESSAGE_DURATION = 4000
 
-menuIcon.onclick = () => {
-    navLinks.classList.toggle("active")
+// Element id -> URL to open in a new tab
+const LINKS = {
+    "github-btn": "https://github.com/ziadmohamed1911",
+    "github-icon": "https://github.com/ziadmohamed1911",
+    "linkedin-icon": "https://www.linkedin.com/in/ziad-mohamed-905a2129b/",
+    "converter-github-repo-btn": "https://github.com/ziadmohamed1911/unit-converter",
+    "converter-live-demo-btn": "https://ziadmohamed1911.github.io/unit-converter/",
+    "password-github-repo-btn": "https://github.com/ziadmohamed1911/password-generator",
+    "password-live-demo-btn": "https://ziadmohamed1911.github.io/password-generator/",
 }
 
-downloadCvBtn.addEventListener ("click", () => {
-    const a =document.createElement("a")
-    a.href = "files/Ziad_Mohamed_CV.docx"
-    a.download = "Ziad_Mohamed_CV.docx"
-    a.click()
+// ===== Helpers =====
+const $ = (id) => document.getElementById(id)
+
+function openInNewTab(url) {
+    window.open(url, "_blank", "noopener,noreferrer")
+}
+
+// ===== Mobile menu =====
+const menuIcon = $("menu-icon")
+const navLinks = document.querySelector(".nav-links")
+
+if (menuIcon && navLinks) {
+    menuIcon.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active")
+        menuIcon.setAttribute("aria-expanded", String(isOpen))
+    })
+
+    // Close the menu after clicking a link
+    navLinks.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+            navLinks.classList.remove("active")
+            menuIcon.setAttribute("aria-expanded", "false")
+        }
+    })
+}
+
+// ===== Download CV =====
+$("download-cv-btn")?.addEventListener("click", () => {
+    const link = document.createElement("a")
+    link.href = "files/Ziad_Mohamed_CV.docx"
+    link.download = "files/Ziad_Mohamed_CV.docx".split("/").pop()
+    link.click()
 })
 
-contactBtn.addEventListener ("click", async () => {
-    try {
-        await navigator.clipboard.writeText("ziadabdellateef7@outlook.com")
-        copyMessage.textContent = "My email address has been copied. Feel free to email me!"
-    }catch (error){
-        copyMessage.textContent= `Couldn't copy automatically. My email address is "ziadabdellateef7@outlook.com"`
-    }
-    
-    setTimeout(() => {
+// ===== Copy email =====
+const contactBtn = $("contact-btn")
+const copyMessage = $("copy-message")
+let messageTimeout
+
+function showMessage(text) {
+    if (!copyMessage) return
+    copyMessage.textContent = text
+    clearTimeout(messageTimeout) // avoids old timers clearing the new message
+    messageTimeout = setTimeout(() => {
         copyMessage.textContent = ""
-    }, 4000)
+    }, MESSAGE_DURATION)
+}
+
+contactBtn?.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(EMAIL)
+        showMessage("My email address has been copied. Feel free to email me!")
+    } catch {
+        showMessage(`Couldn't copy automatically. My email address is ${EMAIL}`)
+    }
 })
 
-githubBtn.addEventListener ("click", () => {
-    window.open("https://github.com/ziadmohamed1911", "_blank", "noopener")
-})
-
-
-githubIcon.addEventListener ("click", () => {
-    window.open("https://github.com/ziadmohamed1911", "_blank", "noopener")
-})
-
-linkedinIcon.addEventListener ("click", () => {
-    window.open("https://www.linkedin.com/in/ziad-mohamed-905a2129b/", "_blank", "noopener")
-})
-
-converterGithubRepoBtn.addEventListener ("click", () => {
-    window.open("https://github.com/ziadmohamed1911/unit-converter", "_blank", "noopener")
-})
-
-converterLiveDemoBtn.addEventListener ("click", () => {
-    window.open("https://ziadmohamed1911.github.io/unit-converter/", "_blank", "noopener")
-})
-
-passwordGithubRepoBtn.addEventListener ("click", () => {
-    window.open("https://github.com/ziadmohamed1911/password-generator", "_blank", "noopener")
-})
-
-passowrdLiveDemoBtn.addEventListener ("click", () => {
-    window.open("https://ziadmohamed1911.github.io/password-generator/", "_blank", "noopener")
+// ===== External links =====
+Object.entries(LINKS).forEach(([id, url]) => {
+    $(id)?.addEventListener("click", () => openInNewTab(url))
 })
