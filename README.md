@@ -27,7 +27,6 @@ A personal portfolio website showcasing my frontend projects, skills, and how to
 - Building responsive layouts from scratch
 - Writing semantic, accessible HTML
 - Organizing CSS and JavaScript in a maintainable way
-- Version control and deploying a live site
 
 ## Getting Started
 
@@ -35,32 +34,20 @@ A personal portfolio website showcasing my frontend projects, skills, and how to
 # Clone the repository
 git clone https://github.com/ziadmohamed1911/my-portfolio-page/
 
-# Go to the project folder
-cd your-repo
-
-# Open index.html in your browser
-# or, if the project uses npm:
-npm install
-npm start
-```
 
 ## Project Structure
 
 ```
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
+├── style.css
+│── main.js
 ├── images/
 └── screenshots/
 ```
 
 ## Roadmap
-
 - [ ] Add more projects
 - [ ] Add dark mode
-- [ ] Improve accessibility and performance scores
 
 ## Contact
 
