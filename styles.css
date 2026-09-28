@@ -90,7 +90,7 @@ li a:hover::before {
     font-size: 2rem;
 }
 
-section {
+main {
     min-height: 100vh;
     padding: 8rem 12%;
     width: 100%;
