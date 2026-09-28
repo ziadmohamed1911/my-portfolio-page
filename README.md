@@ -27,6 +27,7 @@ A personal portfolio website showcasing my frontend projects, skills, and how to
 - Building responsive layouts from scratch
 - Writing semantic, accessible HTML
 - Organizing CSS and JavaScript in a maintainable way
+- Reached 100% on accessibilty rate according to LightHouse Dev Tool
 
 ## Getting Started
 
