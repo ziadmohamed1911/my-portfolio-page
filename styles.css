@@ -161,7 +161,8 @@ section {
     transition: 0.2s ease-in-out;
 }
 
-.btn:hover {
+
+.btn-group btn:hover {
     background: black;
     color: white;
 }
@@ -170,6 +171,7 @@ section {
     margin-top: 12px;
     color: #1f4e79;
     font-weight: 500;
+    font-family: popins, sans-serif;
 }
 
 #socials {
