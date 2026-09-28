@@ -280,6 +280,8 @@ main {
     border: 2px solid black;
     border-radius: 3rem;
     transition: 0.3s ease-in-out;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .project-card:hover{
