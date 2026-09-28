@@ -20,7 +20,7 @@ A personal portfolio website showcasing my frontend projects, skills, and how to
 - CSS3 (Flexbox / Grid)
 - JavaScript (ES6+)
 - Git & GitHub
-- Deployed with GitHub Pages / Netlify / Vercel
+- Deployed with GitHub Pages
 
 ## What I Practiced
 
