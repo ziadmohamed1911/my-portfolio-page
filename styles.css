@@ -151,7 +151,7 @@ section {
     gap: 7rem;
 }
 
-.btn {
+.btn-group btn{
     border-radius: 3rem;
     padding: 0.5rem 1.5rem;
     border: 2px solid black;
@@ -164,6 +164,12 @@ section {
 .btn:hover {
     background: black;
     color: white;
+}
+
+#copy-message {
+    margin-top: 12px;
+    color: #1f4e79;
+    font-weight: 500;
 }
 
 #socials {
@@ -332,50 +338,6 @@ section {
     color: black;
 }
 
-#contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0 auto;
-}
-
-#my-email {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem 0.5rem;
-    background-color: black;
-    color: white;
-    border-radius: 1rem;
-    width: 600px;
-}
-
-#contact h2 {
-    margin-bottom: 20px;
-}
-
-#my-email h3{
-    font-weight: 20px;
-    margin-top: 12px;
-    margin-bottom: 0.1px;
-}
-#email-icon {
-    margin-top: 1px;
-    font-size: 60px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-#email-icon:hover {
-    transform: scale(1.2);
-}
-
 footer {
     left: 0;
     bottom: 0;
@@ -443,10 +405,6 @@ footer p {
     .experience-info img{
         width: 70vw
     }
-    #my-email {
-        background-color: white;
-        color: black;
-    }
 }
 
 @media(max-width:600px){
@@ -485,15 +443,5 @@ footer p {
     }
     .about-container img{
         width: 80vw;
-    }
-    .contact{
-        padding: 1rem 1rem;
-    }
-
-    #my-email h3 {
-       font-size: 1rem;
-    }
-    #my-email i{
-        font-size: 3rem;
     }
 }
