@@ -8,59 +8,119 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
     </head>
     <body>
-        <div id="header">
-            <a href="#logo" id="logo">Ziad Mohamed</a>
-            <ul id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <header id="header">
+            <a href="#logo" class="logo">Ziad Mohamed</a>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-            <button id="visit-btn">Visit GitHub</button>
-        </div>
+            <i class="fa-solid fa-bars" id="menu-icon"></i>            
+            <button class="visit-btn">Visit GitHub</button>
+        </header>
         <section class="about">
             <div class="about-container">
-                <img src="images/profile.jpg" alt="Ziad Mohamed" id="about-image">
+                <img src="images/profile.jpg" alt="Ziad Mohamed" class="my-image">
+                <div class="info-box">
+                    <div class="text">
+                        <h3>Hi, I'm </h3>
+                        <h1>Ziad Mohamed</h1>
+                        <span>Front-End Developer</span>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn">Download CV</div>
+                        <div class="btn">Contact Me</div>
+                    </div> 
+                    <div id="socials">
+                        <i class="fa-brands fa-github" class="social-icon"></i>
+                        <i class="fa-brands fa-linkedin" class="social-icon"></i>
+                    </div>
+                </div>
             </div>
-            <div class="info-box">
-                <div class="text">
-                    <h3>Hi, I'm </h3>
-                    <h1>Ziad Mohamed</h1>
-                    <span>Full Stack Developer</span>
+        </section>
+        <section id="experience" class="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-info">
+                <div class="grid">
+                    <div class="grid-card">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Frontend developer</span>
+                        <h3>2 month</h3>
+                        <p>"Aspiring frontend developer on a mission to level up my skills and grow into a full stack developer. Learning something new every day."</p>
+                    </div>
+                    <div class="grid-card">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Customer service representative</span>
+                        <h3>4 years</h3>
+                        <p>"Former customer service representative with experience supporting customers in English and solving problems under pressure. Now bringing that people-first mindset into tech."</p>
+                    </div>
                 </div>
-                <div class="btn-group">
-                    <div class="btn">Download CV</div>
-                    <div class="btn">Contact Me</div>
-                </div> 
-                <div id="socials">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
+            <img src="Images/profile.jpg" alt="portrait of Ziad Mohamed">
             </div>
         </section>
         <section id="projects" class="projects">
-            <h1>Recent Projects</h1>
+            <h2 class="section-title">Recent Projects</h2>
             <div class="projects-container">
-                
                 <div class="project-card">
-                    <img class="project-image" src="images/converter.png" alt="unit converter project interface">
+                    <img class="project-img" src="images/converter.png" alt="unit converter project interface">
                     <h2>Unit Converter</h2>
                     <p>"A simple unit converter application built with HTML, CSS, and JavaScript. You can convert between various units of measurement. like meters to feet, kilograms to pounds and liters to gallons."</p>
                     <div class="btn-group">
-                        <button class="project-github-btn">Github Repo</button>
-                        <button class="project-live-btn">Live Demo</button>
+                        <button class="project-github-btn btn">Github Repo</button>
+                        <button class="project-live-btn btn">Live Demo</button>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img class="project-image" src="images/pass-generator.png" alt="password generator project interface">
+                    <img class="project-img" src="images/pass-generator.png" alt="password generator project interface">
                     <h2>Password Generator</h2>
                     <p>"A simple password generator application built with HTML, CSS, and JavaScript. You can generate secure passwords with an option to choose the length of the password from 8 to 14 characters."</p>
                     <div class="btn-group">
-                        <button class="project-github-btn">Github Repo</button>
-                        <button class="project-live-btn">Live Demo</button>
+                        <button class="project-github-btn btn">Github Repo</button>
+                        <button class="project-live-btn btn">Live Demo</button>
                     </div>
                 </div>
                 <!-- Add more project cards as needed -->
+            </div>  
         </section>
+        <section id="contact" class="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div id="my-email">
+                <h3>Click on the envlope icon to copy my email address</h3>
+                <i class="fa-regular fa-envelope" id="email-icon"></i>
+            </div>
+        </section>
+        <footer id="footer" class="footer">
+            <ul>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact me</a>
+                </li>
+            </ul>
+            <p>© All copyrights has been reserved | Ziad Mohamed</p>
+        </footer>
+        <script src="script.js"></script>
     </body>   
 </html>
