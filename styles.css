@@ -14,7 +14,7 @@ html, body {
     box-sizing: border-box;   
 }
 
-#header {
+header {
     position: fixed;
     top: 1rem;
     left: 50%;
@@ -31,7 +31,7 @@ html, body {
     z-index: 1000;
 }
 
-#logo {
+.logo {
     font-size: 1.3rem;
     color: white;
     font-weight: 600;
@@ -39,11 +39,11 @@ html, body {
     transition: 0.3s ease-in-out;
 }
 
-#logo:hover {
+.logo:hover {
     transform: scale(1.1);
 }
 
-#nav-links {
+.nav-links {
     display: flex;
     gap: 2rem;
 }
@@ -70,7 +70,7 @@ li a:hover::before {
     width: 100%;
 }
 
-#visit-btn {
+.visit-btn {
     padding: 0.8rem 1.5rem;
     border-radius: 3rem;
     border: none;
@@ -83,7 +83,7 @@ li a:hover::before {
     background: linear-gradient(to right, rgb(0, 157,255), rgb(255,0, 255));
 }
 
-#visit-btn:hover {
+.visit-btn:hover {
     background: linear-gradient(to right, rgb(255,0, 255), rgb(0, 157,255));
     transform: scale(1.1);
 }
@@ -414,13 +414,86 @@ footer p {
     .about .about-container {
         gap: 3rem;
     }
+    .experience-info{
+        flex-direction: column;
+    }
+    .contact {
+        padding: 1rem 2rem;
 
+    }
 }
 
 @media(max-width:768px){
-
+    header {
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+    header .logo{
+        font-size: 1rem;
+    }
+    header .visit-btn {
+        display: none;
+    }
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .experience-info img{
+        width: 70vw
+    }
+    #my-email {
+        background-color: white;
+        color: black;
+    }
 }
 
 @media(max-width:600px){
+    header #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9 );
+        border-radius: 3rem;
+        display: none;
+    }
+    .nav-links li{
+    margin-top: 1.5rem;
+    padding: 1rem;
+    }
 
+    .nav-links.active {
+        display: block;
+    }
+    header{
+        padding: 1rem 5rem;
+        gap: 8rem
+    }
+    header .logo {
+        font-size: 1.5rem;
+    }
+    .about-container img{
+        width: 80vw;
+    }
+    .contact{
+        padding: 1rem 1rem;
+    }
+
+    #my-email h3 {
+       font-size: 1rem;
+    }
+    #my-email i{
+        font-size: 3rem;
+    }
 }
