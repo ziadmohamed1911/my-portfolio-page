@@ -1,114 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ziad Mohamed Portfolio</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
-        <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    </head>
-    <body>
-        <header id="header">
-            <a href="#logo" class="logo">Ziad Mohamed</a>
-            
-            <ul class="nav-links">
-                <li>
-                    <a href="#about">About</a>
-                </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziad Mohamed | Front-End Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Ziad Mohamed, an aspiring full stack developer focused on front-end development with HTML, CSS, and JavaScript.">
 
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
+    <!-- Poppins font (the stylesheet expects it) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header id="header">
+        <a href="#about" class="logo">Ziad Mohamed</a>
+
+        <nav aria-label="Main">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
-            <i class="fa-solid fa-bars" id="menu-icon" aria-expanded="false" aria-label="Menu"></i>            
-            <button class="visit-btn" id="github-btn">Visit GitHub</button>
-        </header>
-        <main class="about" id="about">
+        </nav>
+
+        <button type="button" id="menu-icon" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="visit-btn" id="github-btn">Visit GitHub</button>
+    </header>
+
+    <main>
+        <section class="about" id="about">
             <div class="about-container">
-                <img src="images/profile.jpg" alt="Ziad Mohamed" class="my-image">
+                <!-- Above the fold: no lazy loading. Replace width/height with the file's real pixel size. -->
+                <img src="images/profile.jpg" alt="Portrait of Ziad Mohamed" class="my-image"
+                     width="350" height="350" fetchpriority="high" decoding="async">
                 <div class="info-box">
                     <div class="text">
-                        <h3>Hi, I'm </h3>
+                        <h3>Hi, I'm</h3>
                         <h1>Ziad Mohamed</h1>
                         <span>Front-End Developer</span>
                     </div>
                     <div class="btn-group">
-                        <btn id="download-cv-btn">Download CV</btn>
-                        <btn id="contact-btn">Contact Me</btn>
-                        
-                    </div> 
+                        <button type="button" class="btn" id="download-cv-btn">Download CV</button>
+                        <button type="button" class="btn" id="contact-btn">Contact Me</button>
+                    </div>
                     <p id="copy-message" role="status" aria-live="polite"></p>
                     <div id="socials">
-                        <i class="fa-brands fa-github" class="social-icon" id="github-icon"></i>
-                        <i class="fa-brands fa-linkedin" class="social-icon" id="linkedin-icon"></i>
+                        <!-- TODO: replace with your real profile URLs -->
+                        <a href="https://github.com/ziadmohamed1911" id="github-icon" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ziad-mohamed-905a2129b/" id="linkedin-icon" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
+
         <section id="experience" class="experience">
             <h2 class="section-title">Experience</h2>
             <div class="experience-info">
                 <div class="grid">
                     <div class="grid-card">
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
                         <span>Frontend developer</span>
-                        <h3>2 month</h3>
-                        <p>"Aspiring frontend developer on a mission to level up my skills and grow into a full stack developer. Learning something new every day."</p>
+                        <h3>2 months</h3>
+                        <p>Aspiring frontend developer on a mission to level up my skills and grow into a full stack developer. Learning something new every day.</p>
                     </div>
                     <div class="grid-card">
-                        <i class="fa-solid fa-headset"></i>
+                        <i class="fa-solid fa-headset" aria-hidden="true"></i>
                         <span>Customer service representative</span>
                         <h3>4 years</h3>
-                        <p>"Former customer service representative with experience supporting customers in English and solving problems under pressure. Now bringing that people-first mindset into tech."</p>
+                        <p>Former customer service representative with experience supporting customers in English and solving problems under pressure. Now bringing that people-first mindset into tech.</p>
                     </div>
                 </div>
-            <img src="images/profile.jpg" alt="portrait of Ziad Mohamed">
+                <!-- Decorative repeat of the profile photo, so the alt text is empty -->
+                <img src="images/profile.jpg" alt="" width="600" height="600" loading="lazy" decoding="async">
             </div>
         </section>
+
         <section id="projects" class="projects">
             <h2 class="section-title">Recent Projects</h2>
             <div class="projects-container">
-                <div class="project-card">
-                    <img class="project-img" src="images/converter.png" alt="unit converter project interface">
-                    <h2>Unit Converter</h2>
-                    <p>"A simple unit converter application built with HTML, CSS, and JavaScript. You can convert between various units of measurement. like meters to feet, kilograms to pounds and liters to gallons."</p>
+                <article class="project-card">
+                    <img class="project-img" src="images/converter.png" alt="Screenshot of the unit converter app"
+                         width="800" height="600" loading="lazy" decoding="async">
+                    <h3>Unit Converter</h3>
+                    <p>A simple unit converter built with HTML, CSS, and JavaScript. Convert between units of measurement, like meters to feet, kilograms to pounds, and liters to gallons.</p>
                     <div class="btn-group">
-                        <button class="project-github-btn btn" id="converter-github-repo-btn">Github Repo</button>
-                        <button class="project-live-btn btn"id="converter-live-demo-btn">Live Demo</button>
+                        <button type="button" class="project-github-btn" id="converter-github-repo-btn">Github Repo</button>
+                        <button type="button" class="project-live-btn" id="converter-live-demo-btn">Live Demo</button>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img class="project-img" src="images/pass-generator.png" alt="password generator project interface">
-                    <h2>Password Generator</h2>
-                    <p>"A simple password generator application built with HTML, CSS, and JavaScript. You can generate secure passwords with an option to choose the length of the password from 8 to 14 characters."</p>
+                </article>
+
+                <article class="project-card">
+                    <img class="project-img" src="images/pass-generator.png" alt="Screenshot of the password generator app"
+                         width="800" height="600" loading="lazy" decoding="async">
+                    <h3>Password Generator</h3>
+                    <p>A simple password generator built with HTML, CSS, and JavaScript. Generate secure passwords and choose a length from 8 to 14 characters.</p>
                     <div class="btn-group">
-                        <button class="project-github-btn btn" id="password-github-repo-btn">Github Repo</button>
-                        <button class="project-live-btn btn"id="password-live-demo-btn">Live Demo</button>
+                        <button type="button" class="project-github-btn" id="password-github-repo-btn">Github Repo</button>
+                        <button type="button" class="project-live-btn" id="password-live-demo-btn">Live Demo</button>
                     </div>
-                </div>
+                </article>
                 <!-- Add more project cards as needed -->
-            </div>  
+            </div>
         </section>
-        <footer id="footer" class="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+        <nav aria-label="Footer">
             <ul>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
-            <p>© All copyrights has been reserved | Ziad Mohamed</p>
-        </footer>
-        <script src="script.js" defer></script>
-    </body>   
+        </nav>
+        <p>&copy; 2026 Ziad Mohamed. All rights reserved.</p>
+    </footer>
+</body>
 </html>

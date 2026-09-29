@@ -1,52 +1,46 @@
 // ===== Config =====
 const EMAIL = "ziadabdellateef7@outlook.com"
-const CV_PATH = "files/Ziad_Mohamed_CV.docx"
 const MESSAGE_DURATION = 4000
-
-// Element id -> URL to open in a new tab
-const LINKS = {
-    "github-btn": "https://github.com/ziadmohamed1911",
-    "github-icon": "https://github.com/ziadmohamed1911",
-    "linkedin-icon": "https://www.linkedin.com/in/ziad-mohamed-905a2129b/",
-    "converter-github-repo-btn": "https://github.com/ziadmohamed1911/unit-converter",
-    "converter-live-demo-btn": "https://ziadmohamed1911.github.io/unit-converter/",
-    "password-github-repo-btn": "https://github.com/ziadmohamed1911/password-generator",
-    "password-live-demo-btn": "https://ziadmohamed1911.github.io/password-generator/",
-}
 
 // ===== Helpers =====
 const $ = (id) => document.getElementById(id)
 
-function openInNewTab(url) {
-    window.open(url, "_blank", "noopener,noreferrer")
-}
-
 // ===== Mobile menu =====
 const menuIcon = $("menu-icon")
 const navLinks = document.querySelector(".nav-links")
+const menuGlyph = menuIcon?.querySelector("i")
+
+function setMenu(open) {
+    navLinks.classList.toggle("active", open)
+    menuIcon.setAttribute("aria-expanded", String(open))
+    // Swap the hamburger for an X while the menu is open
+    menuGlyph?.classList.toggle("fa-bars", !open)
+    menuGlyph?.classList.toggle("fa-xmark", open)
+}
 
 if (menuIcon && navLinks) {
     menuIcon.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("active")
-        menuIcon.setAttribute("aria-expanded", String(isOpen))
+        setMenu(!navLinks.classList.contains("active"))
     })
 
     // Close the menu after clicking a link
     navLinks.addEventListener("click", (event) => {
-        if (event.target.closest("a")) {
-            navLinks.classList.remove("active")
-            menuIcon.setAttribute("aria-expanded", "false")
+        if (event.target.closest("a")) setMenu(false)
+    })
+
+    // Close on Escape (and return focus to the menu button)
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navLinks.classList.contains("active")) {
+            setMenu(false)
+            menuIcon.focus()
         }
     })
-}
 
-// ===== Download CV =====
-$("download-cv-btn")?.addEventListener("click", () => {
-    const link = document.createElement("a")
-    link.href = "files/Ziad_Mohamed_CV.docx"
-    link.download = "files/Ziad_Mohamed_CV.docx".split("/").pop()
-    link.click()
-})
+    // Close when clicking anywhere outside the header
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest("header")) setMenu(false)
+    })
+}
 
 // ===== Copy email =====
 const contactBtn = $("contact-btn")
@@ -69,9 +63,4 @@ contactBtn?.addEventListener("click", async () => {
     } catch {
         showMessage(`Couldn't copy automatically. My email address is ${EMAIL}`)
     }
-})
-
-// ===== External links =====
-Object.entries(LINKS).forEach(([id, url]) => {
-    $(id)?.addEventListener("click", () => openInNewTab(url))
 })
