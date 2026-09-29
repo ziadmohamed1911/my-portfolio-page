@@ -18,7 +18,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header id="header">
+    <header>
         <a href="#about" class="logo">Ziad Mohamed</a>
 
         <nav aria-label="Main">
@@ -32,7 +32,7 @@
         <button type="button" id="menu-icon" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
-        <button type="button" class="visit-btn" id="github-btn">Visit GitHub</button>
+        <a href="https://github.com/ziadmohamed1911" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
     </header>
 
     <main>
@@ -48,16 +48,15 @@
                         <span>Front-End Developer</span>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn" id="download-cv-btn">Download CV</button>
+                        <a href="files/Ziad_Mohamed_CV.docx" class="btn" download="Ziad_Mohamed_CV.docx">Download CV</a>
                         <button type="button" class="btn" id="contact-btn">Contact Me</button>
                     </div>
-                    <p id="copy-message" role="status" aria-live="polite"></p>
+                    <p id="copy-message" role="status"></p>
                     <div id="socials">
-                        <!-- TODO: replace with your real profile URLs -->
-                        <a href="https://github.com/ziadmohamed1911" id="github-icon" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/ziadmohamed1911" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/ziad-mohamed-905a2129b/" id="linkedin-icon" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/ziad-mohamed-905a2129b/" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -96,8 +95,8 @@
                     <h3>Unit Converter</h3>
                     <p>A simple unit converter built with HTML, CSS, and JavaScript. Convert between units of measurement, like meters to feet, kilograms to pounds, and liters to gallons.</p>
                     <div class="btn-group">
-                        <button type="button" class="project-github-btn" id="converter-github-repo-btn">Github Repo</button>
-                        <button type="button" class="project-live-btn" id="converter-live-demo-btn">Live Demo</button>
+                        <a href="https://github.com/ziadmohamed1911/unit-converter" class="project-github-btn" aria-label="Unit Converter: Github Repo" target="_blank" rel="noopener noreferrer">Github Repo</a>
+                        <a href="https://ziadmohamed1911.github.io/unit-converter/" class="project-live-btn" aria-label="Unit Converter: Live Demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
                     </div>
                 </article>
 
@@ -107,16 +106,27 @@
                     <h3>Password Generator</h3>
                     <p>A simple password generator built with HTML, CSS, and JavaScript. Generate secure passwords and choose a length from 8 to 14 characters.</p>
                     <div class="btn-group">
-                        <button type="button" class="project-github-btn" id="password-github-repo-btn">Github Repo</button>
-                        <button type="button" class="project-live-btn" id="password-live-demo-btn">Live Demo</button>
+                        <a href="https://github.com/ziadmohamed1911/password-generator" class="project-github-btn" aria-label="Password Generator: Github Repo" target="_blank" rel="noopener noreferrer">Github Repo</a>
+                        <a href="https://ziadmohamed1911.github.io/password-generator/" class="project-live-btn" aria-label="Password Generator: Live Demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
                     </div>
                 </article>
+
+                <article class="project-card">
+                    <img class="project-img" src="images/leads.png" alt="Screenshot of the leads fetcher app"
+                         width="800" height="600" loading="lazy" decoding="async">
+                    <h3>Leads Fetcher Chrome Extension</h3>
+                    <p>A Chrome extension that saves the link of the page you're on to local storage, shows your saved leads in the popup, and lets you clear them all with one click.</p>
+                    <div class="btn-group">
+                        <a href="https://github.com/ziadmohamed1911/get-leads-ext" class="project-github-btn" aria-label="Password Generator: Github Repo" target="_blank" rel="noopener noreferrer">Github Repo</a>
+                    </div>
+                </article>
+
                 <!-- Add more project cards as needed -->
             </div>
         </section>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer>
         <nav aria-label="Footer">
             <ul>
                 <li><a href="#about">About</a></li>
