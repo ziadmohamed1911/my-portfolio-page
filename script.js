@@ -64,3 +64,17 @@ contactBtn?.addEventListener("click", async () => {
         showMessage(`Couldn't copy automatically. My email address is ${EMAIL}`)
     }
 })
+
+
+// ==== Render copyright =====
+
+function renderCopyright() {
+    const copyrightSection = document.getElementById("copyright-section")
+    copyrightSection.innerHTML = `<p>&copy; ${getCurrentYear()} Ziad Mohamed. All rights reserved.</p>`
+}
+
+function getCurrentYear() {
+    return new Date().getFullYear()
+}
+
+renderCopyright()
