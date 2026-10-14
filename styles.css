@@ -312,7 +312,7 @@ header {
 /* ---------- Projects ---------- */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 400px));
+    grid-template-columns: repeat(2, minmax(min(300px, 100%), 400px));
     justify-content: center;
     gap: 2rem;
 }
@@ -446,6 +446,10 @@ footer p {
 
     .grid {
         grid-template-columns: 1fr;
+    }
+
+     .projects-container {
+        grid-template-columns: minmax(0, 400px);
     }
 
     .experience-info img {
