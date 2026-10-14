@@ -370,6 +370,8 @@ header {
     transform: scale(1.1);
 }
 
+
+
 /* ---------- Footer ---------- */
 footer {
     height: 10rem;
@@ -391,11 +393,28 @@ footer ul {
 footer ul li a {
     color: var(--dark);
     font-weight: 600;
+    position: relative; /* lets the underline sit under the link */
 }
 
-footer p {
-    font-size: 1rem;
-    margin-top: 2rem;
+footer a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 0;
+    height: 5px;
+    border-radius: 1rem;
+    background: var(--gradient);
+    transition: width var(--transition);
+}
+
+footer a:hover::before,
+footer a:focus-visible::before {
+    width: 100%;
+}
+.footer a:hover::before,
+.footer a:focus-visible::before {
+    width: 100%;
 }
 
 /* ---------- Scrollbar ---------- */
